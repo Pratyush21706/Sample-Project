@@ -6,3 +6,14 @@
 <h4>Create a New HTML Page using the <code>DOMImplementation</code> interface</h4>
 <iframe src=""></iframe>
 </body>
+<script>
+window.onload = () => {
+  var doc = document.implementation.createHTMLDocument();
+  doc.body.append('Hello World!');
+  var iframeDoc = document.querySelector('iframe').contentDocument;
+  iframeDoc.replaceChild(
+    doc.documentElement, 
+    iframeDoc.documentElement
+  );
+}
+</script>
